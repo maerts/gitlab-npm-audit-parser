@@ -40,11 +40,6 @@
         }
       ],
       "solution": "Update to version 4.2.2 or later.",
-      "instances": [
-        {
-          "method": "express-jwt>jsonwebtoken"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/17"
@@ -90,11 +85,6 @@
         }
       ],
       "solution": "Please update to version 2.11.2 or later. ",
-      "instances": [
-        {
-          "method": "express-jwt>jsonwebtoken>moment"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/55"
@@ -140,11 +130,6 @@
         }
       ],
       "solution": "Update to version 3.0.0 or later.",
-      "instances": [
-        {
-          "method": "express-jwt>jsonwebtoken>jws"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/88"
@@ -190,11 +175,6 @@
         }
       ],
       "solution": "Update to version 1.4.3 or later.",
-      "instances": [
-        {
-          "method": "sanitize-html"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/135"
@@ -240,11 +220,6 @@
         }
       ],
       "solution": "Update to version 1.11.4 or later.",
-      "instances": [
-        {
-          "method": "sanitize-html"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/154"
@@ -288,11 +263,6 @@
         }
       ],
       "solution": "Update to version 2.19.3 or later.",
-      "instances": [
-        {
-          "method": "express-jwt>jsonwebtoken>moment"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/532"
@@ -336,20 +306,6 @@
         }
       ],
       "solution": "Update to version 4.2.1, 5.0.3 or later.",
-      "instances": [
-        {
-          "method": "codeclimate-test-reporter>request>hawk>boom>hoek"
-        },
-        {
-          "method": "codeclimate-test-reporter>request>hawk>cryptiles>boom>hoek"
-        },
-        {
-          "method": "codeclimate-test-reporter>request>hawk>hoek"
-        },
-        {
-          "method": "codeclimate-test-reporter>request>hawk>sntp>hoek"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/566"
@@ -395,11 +351,6 @@
         }
       ],
       "solution": "Update to version 4.17.5 or later.",
-      "instances": [
-        {
-          "method": "sanitize-html>lodash"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/577"
@@ -443,11 +394,6 @@
         }
       ],
       "solution": "Update to version 0.6.0 or later.",
-      "instances": [
-        {
-          "method": "codeclimate-test-reporter>request>tunnel-agent"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/598"
@@ -491,14 +437,6 @@
         }
       ],
       "solution": "Update to version 3.0.0 or later.",
-      "instances": [
-        {
-          "method": "express-jwt>jsonwebtoken>jws>base64url"
-        },
-        {
-          "method": "express-jwt>jsonwebtoken>jws>jwa>base64url"
-        }
-      ],
       "links": [
         {
           "url": "https://npmjs.com/advisories/658"
