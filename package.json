@@ -35,5 +35,8 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.18.0"
+  },
+  "devDependencies": {
+    "schema-merge": "gitlab:gitlab-org/security-products/security-report-schemas#semver:^14.0.1"
   }
 }
