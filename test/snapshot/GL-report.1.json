@@ -1,5 +1,6 @@
 {
-  "version": "1.0",
+  "version": "14.0.1",
+  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.1/dist/dependency-scanning-report-format.json",
   "vulnerabilities": [
     {
       "tool": "npm_audit",
@@ -14,7 +15,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -59,7 +60,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -104,7 +105,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -149,7 +150,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -194,7 +195,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -239,7 +240,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -282,7 +283,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -325,7 +326,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -370,7 +371,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
@@ -413,7 +414,7 @@
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
-        "name": "NPM Audit"
+        "name": "NPM Audit v1"
       },
       "location": {
         "file": "package.json",
