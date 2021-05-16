@@ -4,6 +4,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const thisModule = require("./package.json");
 const path = require("path");
 const SheBangPlugin = require("webpack-shebang-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 const config = {
   entry: "./parse.js",
@@ -15,7 +16,8 @@ const config = {
   plugins: [
     new SheBangPlugin({
       chmod: 0o755
-    })
+    }),
+    new ESLintPlugin()
   ],
   optimization: {
     // minimize & mangle the output files (TerserPlugin w/ webpack@v5)
