@@ -1,16 +1,21 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const isProduction = process.env.NODE_ENV == "production";
-const thisModule = require("./package.json");
+const isProduction = process.env.NODE_ENV === "production";
 const path = require("path");
 const SheBangPlugin = require("webpack-shebang-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
+const thisModule = require("./package.json");
 
 const config = {
   entry: "./parse.js",
   target: "node",
   output: {
-    path: path.resolve(__dirname, path.dirname(thisModule.main) === "." ? "dist" : path.dirname(thisModule.main)),
+    path: path.resolve(
+      __dirname,
+      path.dirname(thisModule.main) === "."
+        ? "dist"
+        : path.dirname(thisModule.main)
+    ),
     filename: path.basename(thisModule.main)
   },
   plugins: [
