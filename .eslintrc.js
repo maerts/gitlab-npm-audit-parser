@@ -4,6 +4,7 @@ module.exports = {
     es2017: true,
   },
   extends: [
+    "eslint:recommended",
     "airbnb-base",
     "plugin:prettier/recommended"
   ],
