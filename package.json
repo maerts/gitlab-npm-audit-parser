@@ -36,5 +36,10 @@
   "dependencies": {
     "commander": "^2.18.0",
     "schema-merge": "gitlab:gitlab-org/security-products/security-report-schemas#semver:^14.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-shebang-plugin": "^1.1.4"
   }
 }
