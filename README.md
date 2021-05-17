@@ -15,12 +15,13 @@
 ## Package Objective
 
 Perform the data translation from an `npm audit --json` report output to the
-GitLab.com standardized JSON schema format specifically for ingest of
-dependency scanning reports of a project.
+GitLab.com standardized JSON schema format specifically for ingest of dependency
+scanning reports of a project.
 
 ## Why?
 
-GitLab requires a common schema to ingest scanning reports from multiple different dependency auditing tools across different languages. In the
+GitLab requires a common schema to ingest scanning reports from multiple
+different dependency auditing tools across different languages. In the
 JavaScript/TypeScript ecosystem, most of us use `npm audit` to verify project
 dependencies but the JSON report is not ingestable by GitLab.com. It requires
 this package as middleware to translate an `npm audit --json` report into the
@@ -38,10 +39,10 @@ Merge Request (MR) webpage.
 
 ## How to use
 
-Install this package into your devDependencies or use `npx` directly to
-download the package at runtime. If you opt to download for use at run time,
-make sure to include the correct scope name for the package since there are
-multiple versions of this package on npmjs.com.
+Install this package into your devDependencies or use `npx` directly to download
+the package at runtime. If you opt to download for use at run time, make sure to
+include the correct scope name for the package since there are multiple versions
+of this package on npmjs.com.
 
 _I recommend the runtime option since this package is only needed in a GitLab
 specific pipeline and not necessary to be locally installed for developer use._
@@ -62,8 +63,8 @@ dependency scanning:
   image: node:10-alpine
   script:
     - npm ci
-    - npm audit --json | npx @codejedi365/gitlab-npm-audit-parser
-      -o gl-dependency-scanning.json
+    - npm audit --json | npx @codejedi365/gitlab-npm-audit-parser -o
+      gl-dependency-scanning.json
   artifacts:
     reports:
       dependency_scanning: gl-dependency-scanning.json
@@ -97,9 +98,10 @@ npm test
 
 ## Extras
 
-**COMING SOON!** [gitlab-depscan-merger](https://github.com/codejedi365/gitlab-depscan-merger):
-a solution to create 1 ingestable dependency_scanning report from multiple
-audit reports overcoming the GitLab pipeline limitation.
+**COMING SOON!**
+[gitlab-depscan-merger](https://github.com/codejedi365/gitlab-depscan-merger): a
+solution to create 1 ingestable dependency_scanning report from multiple audit
+reports overcoming the GitLab pipeline limitation.
 
-Check out my other projects at [@codejedi365](https://github.com/codejedi365)
-on GitHub.com
+Check out my other projects at [@codejedi365](https://github.com/codejedi365) on
+GitHub.com
