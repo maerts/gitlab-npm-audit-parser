@@ -1,10 +1,8 @@
 {
-  "name": "@elpete/gitlab-npm-audit-parser",
-  "version": "1.1.1",
+  "name": "@codejedi365/gitlab-npm-audit-parser",
+  "version": "1.2.0",
   "description": "NPM Audit parser for GitLab dependency scanning",
-  "bin": {
-    "gitlab-npm-audit-parser": "dist/parse.js"
-  },
+  "bin": "dist/parse.js",
   "main": "dist/parse.js",
   "files": [
     "./dist/**"
@@ -26,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:elpete/gitlab-npm-audit-parser.git"
+    "url": "git@github.com:codejedi365/gitlab-npm-audit-parser.git"
   },
   "keywords": [
     "gitlab"
@@ -44,6 +42,10 @@
       "url": "https://github.com/codejedi365"
     }
   ],
+  "engines": {
+    "node": ">=10.24",
+    "npm": ">=7.0"
+  },
   "jest": {
     "globals": {
       "DEV_ENTRYPOINT": "./parse.js"
@@ -63,7 +65,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jest": "^24.3.6",
-    "eslint-plugin-mdx": "^1.13.0",
+    "eslint-plugin-mdx": "^1.0.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-webpack-plugin": "^2.5.4",
     "jest": "^26.6.3",
