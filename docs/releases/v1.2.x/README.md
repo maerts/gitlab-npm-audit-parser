@@ -1,4 +1,9 @@
-# GitLab parser for NPM Audit
+---
+<!-- Gitlab published tag [FALSE IS CORRECT] -->
+published: false
+---
+
+# GitLab parser for NPM Audit (v1.2.0)
 
     Usage: gitlab-npm-audit-parser [options]
 
@@ -11,6 +16,31 @@
       -V, --version     output the version number
       -o, --out <path>  output filename, defaults to gl-dependency-scanning-report.json
       -h, --help        output usage information
+
+## \[v1.2.0] - _2021-05-20_
+
+### Added
+
+- Added CHANGELOG file
+- Added per version readme documentation
+- Eslint for JS and Markdown to include prettier, AirBnb style & remark plugins
+- Official Schema package as a dependency & into bundle for use
+- Webpack bundle creation for distribution code
+
+### Changed
+
+- Run-scripts modified for new developer workflow & pre-checks (dropped prepare
+- Testing Framework implementation uses jest/nodejs instead of shell scripts
+  script)
+- Updated README documentation to explain package and explain new test usage
+- Updated schema output to match official schema (schema.version)
+
+### Fixed
+
+- Fix parse error from stdin extrenuous prefixed json output (usually from
+  `npm run-script`)
+
+---
 
 ## Package Objective
 
@@ -95,27 +125,3 @@ npm run build-watch
 | --- | ----------------------- | --- | ----------------------------------- |
 | 1.  | `./test/v1_report.json` | =>  | `./test/snapshots/GL-report.1.json` |
 | 2.  | `./test/v2_report.json` | =>  | `./test/snapshots/GL-report.2.json` |
-
-## Future (Help Wanted)
-
-- Add `-i|--in|--input <file>` option for handling file input
-
-- Add support for input redirector `<(cat file.txt)`.
-
-- Add testing, dependency, & closer integration with `npm-audit-report` library
-
-- Configure a bot to monitor changes/updates to schema & audit reporter
-  repository
-
-- Implement a verification tool that interprets the schema and evaluates the
-  generated report for accuracy
-
-## Extras
-
-**COMING SOON!**
-[gitlab-depscan-merger](https://github.com/codejedi365/gitlab-depscan-merger): a
-solution to create 1 ingestable dependency_scanning report from multiple audit
-reports overcoming the GitLab pipeline limitation.
-
-Check out my other projects at [@codejedi365](https://github.com/codejedi365) on
-GitHub.com
