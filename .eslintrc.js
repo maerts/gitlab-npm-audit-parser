@@ -16,6 +16,14 @@ module.exports = {
     "mdx/code-blocks": true
   },
   ignorePatterns: ["dist/**"],
+  overrides: [
+    {
+      files: ["**.test.js"],
+      env: {
+        jest: true
+      }
+    }
+  ],
   rules: {
     "no-console": "off"
   }

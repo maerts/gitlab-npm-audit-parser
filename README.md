@@ -78,8 +78,15 @@ and cause an error.
 ## Test
 
 ```sh
-# Build CLI bundle & Execute all test cases
+# Production build (CLI bundle) & Executes all test cases
+npm run test:prod
+
+# Verifies build process once, then runs tests against local files
 npm test
+npm run test:dev   # enable test watch mode
+
+# Monitor build process & interactive lint
+npm run build-watch
 ```
 
 ### Examples
@@ -91,7 +98,14 @@ npm test
 
 ## Future (Help Wanted)
 
-- Configure a bot to monitor changes/updates to schema repository
+- Add `-i|--in|--input <file>` option for handling file input
+
+- Add support for input redirector `<(cat file.txt)`.
+
+- Add testing, dependency, & closer integration with `npm-audit-report` library
+
+- Configure a bot to monitor changes/updates to schema & audit reporter
+  repository
 
 - Implement a verification tool that interprets the schema and evaluates the
   generated report for accuracy
