@@ -25,6 +25,8 @@ module.exports = {
     }
   ],
   rules: {
-    "no-console": "off"
+    "no-console": "off",
+    // webpack handles all dependencies to generate remaining bundle
+    "import/no-extraneous-dependencies": "off"
   }
 };
