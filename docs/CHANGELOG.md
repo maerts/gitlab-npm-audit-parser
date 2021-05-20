@@ -24,6 +24,22 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 
 ---
 
+## \[v1.2.1] - _2021-05-20_
+
+### Changed
+
+- Changed lint to ignore `import/no-extraneous-dependencies` rule
+
+### Removed
+
+- The installation of any dependencies for runtime
+
+### Fixed
+
+- Resolved slow installation of package
+
+---
+
 ## \[v1.2.0] - _2021-05-20_
 
 ### Added
@@ -47,6 +63,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 - Fix parse error from stdin extrenuous prefixed json output (usually from
   `npm run-script`)
 
+---
+
 ## \[v1.1.1] - _2021-05-19_
 
 ### Added
@@ -58,6 +76,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 - Improved README instructions related to testing
 - Ported to new author [@elpete](https://github.com/elpete)
 
+---
+
 ## \[v1.1.0] - _2021-05-06_
 
 ### Added
@@ -65,11 +85,15 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 - Implemented support for `npm-audit-report@v2.0`, which provides v2 report
   format
 
+---
+
 ## \[v1.0.4] - _2020-05-03_
 
 ### Changed
 
 - Optimized `join()`
+
+---
 
 ## \[v1.0.3] - _2019-02-07_
 
@@ -80,14 +104,20 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 - Instructions for Gitlab CI configuration
 - Put vulnerability info into `vulnerabilities` array
 
+---
+
 ## \[v1.0.2] - _2018-10-01_
 
 - Defined bin file
+
+---
 
 ## \[v1.0.1] - _2018-09-30_
 
 - Added initial documentation
 - Cleaned up code
+
+---
 
 ## \[v1.0.0] - _2018-09-27_
 

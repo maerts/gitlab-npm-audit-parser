@@ -7,9 +7,12 @@ published: false
 
     {{ USAGE }}
 
-## \[{{ VERSION }}] - _{{ DATE }}_
+<details>
+  <summary><font size="4.5">[{{ VERSION }}] - <i>{{ DATE }}</i></font></summary>
 
-{{ CHANGELOG.MD#{{VERSION}} }}
+{{ CHANGELOG.MD#VERSION }}
+
+</details>
 
 ---
 

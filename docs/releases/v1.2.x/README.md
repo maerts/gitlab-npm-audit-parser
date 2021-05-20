@@ -3,7 +3,7 @@
 published: false
 ---
 
-# GitLab parser for NPM Audit (v1.2.0)
+# GitLab parser for NPM Audit (v1.2.1)
 
     Usage: gitlab-npm-audit-parser [options]
 
@@ -17,28 +17,59 @@ published: false
       -o, --out <path>  output filename, defaults to gl-dependency-scanning-report.json
       -h, --help        output usage information
 
-## \[v1.2.0] - _2021-05-20_
+<!--lint disable no-duplicate-headings-->
+
+## Updates
+
+<details>
+  <summary><font size="4.5">[v1.2.1] - <i>2021-05-20</i></font></summary>
+
+### Changed
+
+- Changed lint to ignore `import/no-extraneous-dependencies` rule
+
+### Removed
+
+- The installation of any dependencies for runtime
+
+### Fixed
+
+- Resolved slow installation of package
+
+</details>
+
+<details>
+  <summary><font size="4.5">[v1.2.0] - <i>2021-05-20</i></font></summary>
 
 ### Added
 
 - Added CHANGELOG file
+
 - Added per version readme documentation
+
 - Eslint for JS and Markdown to include prettier, AirBnb style & remark plugins
+
 - Official Schema package as a dependency & into bundle for use
+
 - Webpack bundle creation for distribution code
 
 ### Changed
 
 - Run-scripts modified for new developer workflow & pre-checks (dropped prepare
+
 - Testing Framework implementation uses jest/nodejs instead of shell scripts
   script)
+
 - Updated README documentation to explain package and explain new test usage
+
 - Updated schema output to match official schema (schema.version)
 
 ### Fixed
 
 - Fix parse error from stdin extrenuous prefixed json output (usually from
   `npm run-script`)
+
+</details>
 
 ---
 
