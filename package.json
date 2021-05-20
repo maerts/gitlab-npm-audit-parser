@@ -14,13 +14,15 @@
   },
   "scripts": {
     "build": "npm run --silent build:prod --",
+    "build-watch": "webpack --watch",
     "build:prod": "webpack --mode=production --node-env=production",
-    "prepublishOnly": "npm run build && npm run test",
-    "test": "export npm_config_loglevel=silent; npm run test:v1; npm run test:v2; npm run test:run-script-use;",
-    "test:v1": "printf 'v1: '; cat test/v1_report.json | ./dist/parse.js -o GL-report.1.json >/dev/null && diff -q GL-report.1.json test/snapshot/GL-report.1.json && echo success!; RC=$?; rm GL-report.1.json; exit $RC",
-    "test:v2": "printf 'v2: '; cat test/v2_report.json | ./dist/parse.js -o GL-report.2.json >/dev/null && diff -q GL-report.2.json test/snapshot/GL-report.2.json && echo success!; RC=$?; rm GL-report.2.json; exit $RC",
-    "test:run-script-use": "printf 'run-script-use: '; bash -c 'cat <(echo -e \"\n> npm audit --json\n\") test/v2_report.json' | ./dist/parse.js -o GL-report.runs.json >/dev/null && diff -q GL-report.runs.json test/snapshot/GL-report.2.json && echo success!; RC=$?; rm GL-report.runs.json; exit $RC",
-    "watch": "webpack --watch"
+    "prepublishOnly": "npm run test:prod && eslint . --ext md,mdx",
+    "lint": "eslint . --ext js,md,mdx",
+    "format": "npm run --silent lint -- --fix",
+    "pretest": "npm run --silent build",
+    "test": "jest --runInBand",
+    "test:dev": "npm run --silent test -- --watch",
+    "test:prod": "export NODE_ENV=production; npm run --silent test;"
   },
   "repository": {
     "type": "git",
@@ -42,12 +44,37 @@
       "url": "https://github.com/codejedi365"
     }
   ],
+  "jest": {
+    "globals": {
+      "DEV_ENTRYPOINT": "./parse.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/setupTests.js"
+    ]
+  },
   "license": "MIT",
   "dependencies": {
     "commander": "^2.18.0",
     "schema-merge": "gitlab:gitlab-org/security-products/security-report-schemas#semver:^14.0.1"
   },
   "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-mdx": "^1.13.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.3.0",
+    "remark-lint-alphabetize-lists": "^3.0.0",
+    "remark-lint-are-links-valid": "^1.0.3",
+    "remark-preset-lint-consistent": "^4.0.0",
+    "remark-preset-lint-markdown-style-guide": "^4.0.0",
+    "remark-preset-lint-recommended": "^5.0.0",
+    "remark-preset-prettier": "^0.4.1",
+    "replace-in-file": "^6.2.0",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
     "webpack-shebang-plugin": "^1.1.4"
