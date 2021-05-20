@@ -27,8 +27,10 @@ describe("npm-audit-report-v2", () => {
       throw new Error("BeforeAll failed prior to test.");
     }
     const reportJSONfile = path.resolve(__dirname, "v2_report.json");
-    await subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`);
     const outputFile = defaultOutputFilename;
+    await expect(
+      subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
+    ).resolves.toBeTruthy();
     await expect(global.sha256sum(outputFile)).resolves.toEqual(
       validGLFormatV2Hash
     );
