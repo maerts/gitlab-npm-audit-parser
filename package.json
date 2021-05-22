@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "npm run --silent build:prod --",
-    "build-watch": "webpack --watch",
+    "build-watch": "webpack --mode=production --watch",
     "build:prod": "webpack --mode=production --node-env=production",
     "prepublishOnly": "npm run test:prod && eslint . --ext md,mdx",
     "lint": "eslint . --ext js,md,mdx",
@@ -27,7 +27,16 @@
     "url": "git@github.com:codejedi365/gitlab-npm-audit-parser.git"
   },
   "keywords": [
-    "gitlab"
+    "gitlab",
+    "npm",
+    "CI",
+    "dependency-scan",
+    "audit",
+    "vulnerabilities",
+    "report",
+    "json",
+    "codejedi365",
+    "convert"
   ],
   "author": "Maxime Gibeau",
   "contributors": [

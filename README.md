@@ -30,6 +30,14 @@ dependency_scanning artifact. Ingested artifacts can then be used as data
 sources to generate interactive content embedded in a pipeline results view or
 Merge Request (MR) webpage.
 
+**Why this library?** Because it's fast! We used
+[Webpack](https://github.com/webpack/webpack) to generate a self-contained
+bundle which means we have **0 dependencies** to download for production! With
+NPX you can use this library direct from the cloud with minimal delay at 37.7KB
+unpacked size. We use Gitlab's published schema repository directly to help
+construct the output code. For Developers, we also employ linting & automated
+testing on the codebase to improve the development experience.
+
 ## Compatibility
 
 | INGEST                  | SUPPORTED? | OUTPUT                                      |
