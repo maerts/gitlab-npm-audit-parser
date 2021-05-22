@@ -27,7 +27,16 @@
     "url": "git@github.com:codejedi365/gitlab-npm-audit-parser.git"
   },
   "keywords": [
-    "gitlab"
+    "gitlab",
+    "npm",
+    "CI",
+    "dependency-scan",
+    "audit",
+    "vulnerabilities",
+    "report",
+    "json",
+    "codejedi365",
+    "convert"
   ],
   "author": "Maxime Gibeau",
   "contributors": [
