@@ -20,7 +20,8 @@
     "pretest": "npm run --silent build",
     "test": "jest --runInBand",
     "test:dev": "npm run --silent test -- --watch",
-    "test:prod": "export NODE_ENV=production; npm run --silent test;"
+    "test:prod": "export NODE_ENV=production; npm run --silent test;",
+    "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
@@ -87,5 +88,8 @@
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0",
     "webpack-shebang-plugin": "^1.1.4"
+  },
+  "resolutions": {
+    "trim": "^1.0.0"
   }
 }
