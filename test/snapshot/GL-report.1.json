@@ -7,7 +7,8 @@
       "name": "jsonwebtoken",
       "namespace": "jsonwebtoken",
       "message": "Verification Bypass",
-      "cve": "package.jsonjsonwebtoken:cve_id:CVE-2015-9235",
+      "id": "npm::advisory:17::jsonwebtoken",
+      "cve": "npm::advisory:17::jsonwebtoken",
       "description": "Versions 4.2.1 and earlier of `jsonwebtoken` are affected by a verification bypass vulnerability. This is a result of weak validation of the JWT algorithm type, occuring when an attacker is allowed to arbitrarily specify the JWT algorithm.\n\n",
       "severity": "Critical",
       "fixedby": "Tim McLean",
@@ -51,7 +52,8 @@
       "name": "moment",
       "namespace": "moment",
       "message": "Regular Expression Denial of Service",
-      "cve": "package.jsonmoment:cve_id:CVE-2016-4055",
+      "id": "npm::advisory:55::moment",
+      "cve": "npm::advisory:55::moment",
       "description": "Versions of `moment` prior to 2.11.2 are affected by a regular expression denial of service vulnerability. The vulnerability is triggered when arbitrary user input is passed into `moment.duration()`.\n\n\n## Proof of concept\n```\nvar moment = require('moment');\n\nvar genstr = function (len, chr) {\n    var result = \"\";\n    for (i=0; i<=len; i++) {\n        result = result + chr;\n    }\n\n    return result;\n}\n\n\nfor (i=20000;i<=10000000;i=i+10000) {\n    console.log(\"COUNT: \" + i);\n    var str = '-' + genstr(i, '1')\n    console.log(\"LENGTH: \" + str.length);\n    var start = process.hrtime();\n    moment.duration(str)\n\n    var end = process.hrtime(start);\n    console.log(end);\n}\n```\n\n### Results\n```\n$ node moment.js\nCOUNT: 20000\nLENGTH: 20002\n[ 0, 618931029 ]\nCOUNT: 30001\nLENGTH: 30003\n[ 1, 401413894 ]\nCOUNT: 40002\nLENGTH: 40004\n[ 2, 437075303 ]\nCOUNT: 50003\nLENGTH: 50005\n[ 3, 824664804 ]\nCOUNT: 60004\nLENGTH: 60006\n[ 5, 651335262 ]\n```",
       "severity": "Medium",
       "fixedby": "Adam Baldwin",
@@ -95,7 +97,8 @@
       "name": "jws",
       "namespace": "jws",
       "message": "Forgeable Public/Private Tokens",
-      "cve": "package.jsonjws:cve_id:CVE-2016-1000223",
+      "id": "npm::advisory:88::jws",
+      "cve": "npm::advisory:88::jws",
       "description": "Affected versions of the `jws` package allow users to select what algorithm the server will use to verify a provided JWT. A malicious actor can use this behaviour to arbitrarily modify the contents of a JWT while still passing verification. For the common use case of the JWT as a bearer token, the end result is a complete authentication bypass with minimal effort.\n\n",
       "severity": "High",
       "fixedby": "Brian Brennan and Tim McLean",
@@ -139,7 +142,8 @@
       "name": "sanitize-html",
       "namespace": "sanitize-html",
       "message": "Cross-Site Scripting",
-      "cve": "package.jsonsanitize-html:cve_id:CVE-2016-1000237",
+      "id": "npm::advisory:135::sanitize-html",
+      "cve": "npm::advisory:135::sanitize-html",
       "description": "Affected versions of `sanitize-html` do not sanitize input recursively, which may allow an attacker to execute arbitrary Javascript.",
       "severity": "Medium",
       "fixedby": "Björn Kimminich",
@@ -183,7 +187,8 @@
       "name": "sanitize-html",
       "namespace": "sanitize-html",
       "message": "Cross Site Scripting",
-      "cve": "package.jsonsanitize-html:cve_id:CVE-2017-16016",
+      "id": "npm::advisory:154::sanitize-html",
+      "cve": "npm::advisory:154::sanitize-html",
       "description": "Affected versions of `sanitize-html` are vulnerable to cross-site scripting when allowedTags includes at least one `nonTextTag`.\n\n## Proof of Concept\n\n```\nvar sanitizeHtml = require('sanitize-html');\n\nvar dirty = '!<textarea>&lt;/textarea&gt;<svg/onload=prompt`xs`&gt;</textarea>!';\nvar clean = sanitizeHtml(dirty, {\n    allowedTags: [ 'textarea' ]\n});\n\nconsole.log(clean);\n\n// !<textarea></textarea><svg/onload=prompt`xs`></textarea>!\n```",
       "severity": "Medium",
       "fixedby": "Andrew Krasichkov",
@@ -227,7 +232,8 @@
       "name": "moment",
       "namespace": "moment",
       "message": "Regular Expression Denial of Service",
-      "cve": "package.jsonmoment:cve_id:undefined",
+      "id": "npm::advisory:532::moment",
+      "cve": "npm::advisory:532::moment",
       "description": "Affected versions of `moment` are vulnerable to a low severity regular expression denial of service when parsing dates as strings.",
       "severity": "Low",
       "fixedby": "Cristian-Alexandru Staicu",
@@ -247,10 +253,6 @@
       },
       "identifiers": [
         {
-          "type": "cve_id",
-          "url": "https://nvd.nist.gov/vuln/detail/undefined"
-        },
-        {
           "type": "cwe_id",
           "name": "CWE-400",
           "value": "CWE-400",
@@ -269,7 +271,8 @@
       "name": "hoek",
       "namespace": "hoek",
       "message": "Prototype pollution",
-      "cve": "package.jsonhoek:cve_id:undefined",
+      "id": "npm::advisory:566::hoek",
+      "cve": "npm::advisory:566::hoek",
       "description": "Versions of `hoek` prior to 4.2.1 and 5.0.3 are vulnerable to prototype pollution.\n\nThe `merge` function, and the `applyToDefaults` and `applyToDefaultsWithShallow` functions which leverage `merge` behind the scenes, are vulnerable to a prototype pollution attack when provided an _unvalidated_ payload created from a JSON string containing the `__proto__` property.\n\nThis can be demonstrated like so:\n\n```javascript\nvar Hoek = require('hoek');\nvar malicious_payload = '{\"__proto__\":{\"oops\":\"It works !\"}}';\n\nvar a = {};\nconsole.log(\"Before : \" + a.oops);\nHoek.merge({}, JSON.parse(malicious_payload));\nconsole.log(\"After : \" + a.oops);\n```\n\nThis type of attack can be used to overwrite existing properties causing a potential denial of service.",
       "severity": "Medium",
       "fixedby": "HoLyVieR",
@@ -289,10 +292,6 @@
       },
       "identifiers": [
         {
-          "type": "cve_id",
-          "url": "https://nvd.nist.gov/vuln/detail/undefined"
-        },
-        {
           "type": "cwe_id",
           "name": "CWE-471",
           "value": "CWE-471",
@@ -311,7 +310,8 @@
       "name": "lodash",
       "namespace": "lodash",
       "message": "Prototype Pollution",
-      "cve": "package.jsonlodash:cve_id:CVE-2018-3721",
+      "id": "npm::advisory:577::lodash",
+      "cve": "npm::advisory:577::lodash",
       "description": "Versions of `lodash` before 4.17.5 are vulnerable to prototype pollution. \n\nThe vulnerable functions are 'defaultsDeep', 'merge', and 'mergeWith' which allow a malicious user to modify the prototype of `Object` via `__proto__` causing the addition or modification of an existing property that will exist on all objects.\n\n",
       "severity": "Low",
       "fixedby": "Olivier Arteau (HoLyVieR)",
@@ -355,7 +355,8 @@
       "name": "tunnel-agent",
       "namespace": "tunnel-agent",
       "message": "Memory Exposure",
-      "cve": "package.jsontunnel-agent:cve_id:undefined",
+      "id": "npm::advisory:598::tunnel-agent",
+      "cve": "npm::advisory:598::tunnel-agent",
       "description": "Versions of `tunnel-agent` before 0.6.0 are vulnerable to memory exposure.\n\nThis is exploitable if user supplied input is provided to the auth value and is a number.\n\nProof-of-concept:\n```js\nrequire('request')({\n  method: 'GET',\n  uri: 'http://www.example.com',\n  tunnel: true,\n  proxy:{\n    protocol: 'http:',\n    host:'127.0.0.1',\n    port:8080,\n    auth:USERSUPPLIEDINPUT // number\n  }\n});\n```",
       "severity": "Medium",
       "fixedby": "Сковорода Никита Андреевич",
@@ -375,10 +376,6 @@
       },
       "identifiers": [
         {
-          "type": "cve_id",
-          "url": "https://nvd.nist.gov/vuln/detail/undefined"
-        },
-        {
           "type": "cwe_id",
           "name": "CWE-20",
           "value": "CWE-20",
@@ -397,7 +394,8 @@
       "name": "base64url",
       "namespace": "base64url",
       "message": "Out-of-bounds Read",
-      "cve": "package.jsonbase64url:cve_id:undefined",
+      "id": "npm::advisory:658::base64url",
+      "cve": "npm::advisory:658::base64url",
       "description": "Versions of `base64url` before 3.0.0 are vulnerable to to out-of-bounds reads as it allocates uninitialized Buffers when number is passed in input on Node.js 4.x and below.",
       "severity": "Medium",
       "fixedby": "Сковорода Никита Андреевич",
@@ -416,10 +414,6 @@
         }
       },
       "identifiers": [
-        {
-          "type": "cve_id",
-          "url": "https://nvd.nist.gov/vuln/detail/undefined"
-        },
         {
           "type": "cwe_id",
           "name": "CWE-125",
