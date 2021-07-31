@@ -18,9 +18,8 @@
     "lint": "eslint . --ext js,md,mdx",
     "format": "npm run --silent lint -- --fix",
     "pretest": "npm run --silent build",
-    "test": "jest --runInBand",
-    "test:dev": "npm run --silent test -- --watch",
-    "test:prod": "export NODE_ENV=production; npm run --silent test;",
+    "test": "npm run --silent test:prod --",
+    "test:prod": "export NODE_ENV=production; jest --runInBand",
     "preinstall": "npx npm-force-resolutions"
   },
   "repository": {
@@ -57,11 +56,12 @@
     "npm": ">=7.0"
   },
   "jest": {
-    "globals": {
-      "DEV_ENTRYPOINT": "./parse.js"
-    },
     "setupFilesAfterEnv": [
       "<rootDir>/test/setupTests.js"
+    ],
+    "transformIgnorePatterns": [],
+    "watchPathIgnorePatterns": [
+      "<rootDir>/(?!(dist|test)/)"
     ]
   },
   "license": "MIT",

@@ -13,11 +13,7 @@ const path = require("path");
 const thisModule = require("../package.json");
 
 global.PROJECT_ROOT = path.dirname(__dirname);
-
-global.PARSER_CLI =
-  process.env.NODE_ENV === "production"
-    ? path.resolve(global.PROJECT_ROOT, thisModule.main)
-    : path.resolve(global.PROJECT_ROOT, global.DEV_ENTRYPOINT); // dev entrypoint
+global.PARSER_CLI = path.resolve(global.PROJECT_ROOT, thisModule.main);
 
 // console.log(`Tests running in ${process.env.NODE_ENV || "development"} mode.`);
 // console.log(
@@ -35,7 +31,8 @@ global.validateReport = function validateReport(reportObj) {
   const result = validate(reportObj, schemaSpec);
   const isValid = result.errors.length === 0;
   if (!isValid) {
-    console.error(result.errors.join("; "));
+    process.stderr.write("Report errors:\n");
+    process.stderr.write(`  ${result.errors.join(";\n  ")};\n\n`);
   }
   return isValid;
 };
