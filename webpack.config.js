@@ -35,6 +35,9 @@ function buildConfig(env) {
     },
     resolve: {
       extensions: [".js", ".json"]
+    },
+    externalsPresets: {
+      node: true // ignore node built-in modules like path, fs, etc.
     }
   };
 }
