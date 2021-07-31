@@ -15,11 +15,6 @@ const thisModule = require("../package.json");
 global.PROJECT_ROOT = path.dirname(__dirname);
 global.PARSER_CLI = path.resolve(global.PROJECT_ROOT, thisModule.main);
 
-// console.log(`Tests running in ${process.env.NODE_ENV || "development"} mode.`);
-// console.log(
-//   `Entrypoint: ${global.PARSER_CLI.replace(global.PROJECT_ROOT, "")}`
-// );
-
 global.sha256sum = async function sha256sum(filepath) {
   const hash = createHash("sha256");
   const data = await readFile(filepath);
