@@ -86,7 +86,7 @@
       "name": "elliptic",
       "message": "Use of a Broken or Risky Cryptographic Algorithm",
       "description": "Use of a Broken or Risky Cryptographic Algorithm",
-      "severity": "Moderate",
+      "severity": "Medium",
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
@@ -276,7 +276,7 @@
       "name": "ssri",
       "message": "Regular Expression Denial of Service",
       "description": "Regular Expression Denial of Service",
-      "severity": "Moderate",
+      "severity": "Medium",
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
