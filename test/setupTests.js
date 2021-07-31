@@ -38,6 +38,6 @@ global.validateReport = function validateReport(reportObj) {
 };
 
 global.validateReportFile = async function validateReportFile(filepath) {
-  const reportJSON = await readFile(filepath);
+  const reportJSON = await readFile(filepath, "utf-8");
   return global.validateReport(reportJSON);
 };
