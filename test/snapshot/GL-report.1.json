@@ -1,6 +1,6 @@
 {
-  "version": "14.0.1",
-  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.1/dist/dependency-scanning-report-format.json",
+  "version": "14.0.3",
+  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.3/dist/dependency-scanning-report-format.json",
   "vulnerabilities": [
     {
       "tool": "npm_audit",
