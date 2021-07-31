@@ -3,8 +3,8 @@
   "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.3/dist/dependency-scanning-report-format.json",
   "vulnerabilities": [
     {
-      "id": "NPM Audit: axios cve_id: 1594",
-      "cve": "NPM Audit: axios cve_id: 1594",
+      "id": "npm::advisory:1594::axios",
+      "cve": "npm::advisory:1594::axios",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "axios",
@@ -41,8 +41,8 @@
       ]
     },
     {
-      "id": "NPM Audit: braces cve_id: 786",
-      "cve": "NPM Audit: braces cve_id: 786",
+      "id": "npm::advisory:786::braces",
+      "cve": "npm::advisory:786::braces",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "braces",
@@ -79,8 +79,8 @@
       ]
     },
     {
-      "id": "NPM Audit: elliptic cve_id: 1648",
-      "cve": "NPM Audit: elliptic cve_id: 1648",
+      "id": "npm::advisory:1648::elliptic",
+      "cve": "npm::advisory:1648::elliptic",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "elliptic",
@@ -117,8 +117,8 @@
       ]
     },
     {
-      "id": "NPM Audit: gsap cve_id: 1608",
-      "cve": "NPM Audit: gsap cve_id: 1608",
+      "id": "npm::advisory:1608::gsap",
+      "cve": "npm::advisory:1608::gsap",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "gsap",
@@ -155,8 +155,8 @@
       ]
     },
     {
-      "id": "NPM Audit: ini cve_id: 1589",
-      "cve": "NPM Audit: ini cve_id: 1589",
+      "id": "npm::advisory:1589::ini",
+      "cve": "npm::advisory:1589::ini",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "ini",
@@ -193,8 +193,8 @@
       ]
     },
     {
-      "id": "NPM Audit: merge cve_id: 1666",
-      "cve": "NPM Audit: merge cve_id: 1666",
+      "id": "npm::advisory:1666::merge",
+      "cve": "npm::advisory:1666::merge",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "merge",
@@ -231,8 +231,8 @@
       ]
     },
     {
-      "id": "NPM Audit: npm-user-validate cve_id: 1572",
-      "cve": "NPM Audit: npm-user-validate cve_id: 1572",
+      "id": "npm::advisory:1572::npm-user-validate",
+      "cve": "npm::advisory:1572::npm-user-validate",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "npm-user-validate",
@@ -269,8 +269,8 @@
       ]
     },
     {
-      "id": "NPM Audit: ssri cve_id: 565",
-      "cve": "NPM Audit: ssri cve_id: 565",
+      "id": "npm::advisory:565::ssri",
+      "cve": "npm::advisory:565::ssri",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "ssri",
@@ -307,8 +307,8 @@
       ]
     },
     {
-      "id": "NPM Audit: y18n cve_id: 1654",
-      "cve": "NPM Audit: y18n cve_id: 1654",
+      "id": "npm::advisory:1654::y18n",
+      "cve": "npm::advisory:1654::y18n",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "y18n",
@@ -345,8 +345,8 @@
       ]
     },
     {
-      "id": "NPM Audit: yargs-parser cve_id: 1500",
-      "cve": "NPM Audit: yargs-parser cve_id: 1500",
+      "id": "npm::advisory:1500::yargs-parser",
+      "cve": "npm::advisory:1500::yargs-parser",
       "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "yargs-parser",
@@ -387,7 +387,7 @@
     {
       "fixes": [
         {
-          "id": "NPM Audit: braces cve_id: 786"
+          "id": "npm::advisory:786::braces"
         }
       ],
       "summary": "Upgrade jest to version >=26.6.3"
@@ -395,7 +395,7 @@
     {
       "fixes": [
         {
-          "id": "NPM Audit: merge cve_id: 1666"
+          "id": "npm::advisory:1666::merge"
         }
       ],
       "summary": "Upgrade jest to version >=26.6.3"
@@ -403,7 +403,7 @@
     {
       "fixes": [
         {
-          "id": "NPM Audit: yargs-parser cve_id: 1500"
+          "id": "npm::advisory:1500::yargs-parser"
         }
       ],
       "summary": "Upgrade jest to version >=26.6.3"
