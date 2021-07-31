@@ -3,7 +3,6 @@
   "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.3/dist/dependency-scanning-report-format.json",
   "vulnerabilities": [
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "jsonwebtoken",
       "namespace": "jsonwebtoken",
@@ -48,7 +47,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "moment",
       "namespace": "moment",
@@ -93,7 +91,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "jws",
       "namespace": "jws",
@@ -138,7 +135,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "sanitize-html",
       "namespace": "sanitize-html",
@@ -183,7 +179,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "sanitize-html",
       "namespace": "sanitize-html",
@@ -228,7 +223,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "moment",
       "namespace": "moment",
@@ -271,7 +265,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "hoek",
       "namespace": "hoek",
@@ -314,7 +307,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "lodash",
       "namespace": "lodash",
@@ -359,7 +351,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "tunnel-agent",
       "namespace": "tunnel-agent",
@@ -402,7 +393,6 @@
       ]
     },
     {
-      "tool": "npm_audit",
       "category": "dependency_scanning",
       "name": "base64url",
       "namespace": "base64url",
