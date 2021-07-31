@@ -1,38 +1,116 @@
-const { unlink } = require("fs/promises");
+const { unlink, copyFile } = require("fs/promises");
 const { promisify } = require("util");
 const path = require("path");
 const subprocess = require("child_process");
+const { replaceInFile } = require("replace-in-file");
 
 const subprocessExec = promisify(subprocess.exec);
 const parserCLI = global.PARSER_CLI;
 const defaultOutputFilename = "gl-dependency-scanning-report.json";
-const validGLFormatV1File = path.resolve(
-  __dirname,
-  "snapshot",
-  "GL-report.1.json"
-);
-let validGLFormatV1Hash;
 
-describe("npm-audit-report-v1", () => {
-  beforeAll(async () => {
-    validGLFormatV1Hash = await global.sha256sum(validGLFormatV1File);
+describe("gitlab-npm-audit-parser", () => {
+  // AUDIT VERSION 1
+  describe("npm-audit-report-v1", () => {
+    afterAll(async () => {
+      await unlink(defaultOutputFilename);
+    });
+
+    it("generates correct gitlab parsable schema from piped input", async () => {
+      const validGLFormatV1File = path.resolve(
+        __dirname,
+        "snapshot",
+        "GL-report.1.json"
+      );
+      const validGLFormatV1Hash = await global.sha256sum(validGLFormatV1File);
+      const reportJSONfile = path.resolve(__dirname, "v1_report.json");
+      const outputFile = defaultOutputFilename;
+      await expect(
+        subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
+      ).resolves.toBeTruthy();
+      await expect(global.sha256sum(outputFile)).resolves.toEqual(
+        validGLFormatV1Hash
+      );
+    });
+
+    // it("handles 0 vulnerabilities found", async () => {});
   });
-  afterAll(async () => {
-    await unlink(defaultOutputFilename);
+
+  // AUDIT VERSION 2
+  describe("npm-audit-report-v2", () => {
+    afterAll(async () => {
+      await unlink(defaultOutputFilename);
+    });
+
+    it("generates correct gitlab parsable schema from piped input", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v2_report.json");
+      const validGLFormatV2File = path.resolve(
+        __dirname,
+        "snapshot",
+        "GL-report.2.json"
+      );
+      const validGLFormatV2Hash = await global.sha256sum(validGLFormatV2File);
+      const outputFile = defaultOutputFilename;
+      await expect(
+        subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
+      ).resolves.toBeTruthy();
+      await expect(global.sha256sum(outputFile)).resolves.toEqual(
+        validGLFormatV2Hash
+      );
+    });
+
+    describe("run-script-use", () => {
+      const originalReportJSONfile = path.resolve(__dirname, "v2_report.json");
+      const reportJSONfile = `${originalReportJSONfile}.tmp`;
+      let pretestSetup = false;
+
+      beforeAll(async () => {
+        await copyFile(originalReportJSONfile, reportJSONfile);
+        await replaceInFile({
+          files: reportJSONfile,
+          from: /^\s*{/,
+          to: (match) => {
+            // Inserts lines of output typically seen from npm run-script if not silent
+            const lines = [
+              "> project@v#.#.# dependency-security",
+              "> npm audit --audit-level=moderate\n",
+              match
+            ];
+            return `\n${lines.join("\n")}`;
+          }
+        });
+        pretestSetup = true;
+      });
+
+      afterAll(async () => {
+        await unlink(reportJSONfile);
+      });
+
+      it("generates correct gitlab parsable schema from piped input w/ run-script prefix", async () => {
+        if (!pretestSetup) {
+          // Jest 27 (uses jest-circus), should deem this check irrelevant.
+          // BeforeAll/BeforeEach hook failures will terminate all consecutive tests
+          throw new Error("BeforeAll failed prior to test.");
+        }
+        const validGLFormatV2File = path.resolve(
+          __dirname,
+          "snapshot",
+          "GL-report.2.json"
+        );
+        const validGLFormatV2Hash = await global.sha256sum(validGLFormatV2File);
+        const outputFile = defaultOutputFilename;
+
+        await expect(
+          subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
+        ).resolves.toBeTruthy();
+
+        await expect(global.sha256sum(outputFile)).resolves.toEqual(
+          validGLFormatV2Hash
+        );
+      });
+    });
   });
-  it("generates correct gitlab parsable schema from piped input", async () => {
-    if (!validGLFormatV1Hash) {
-      // Jest 27 (uses jest-circus), should deem this check irrelevant.
-      // BeforeAll/BeforeEach hook failures will terminate all consecutive tests
-      throw new Error("BeforeAll failed prior to test.");
-    }
-    const reportJSONfile = path.resolve(__dirname, "v1_report.json");
-    const outputFile = defaultOutputFilename;
-    await expect(
-      subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
-    ).resolves.toBeTruthy();
-    await expect(global.sha256sum(outputFile)).resolves.toEqual(
-      validGLFormatV1Hash
-    );
+
+  describe("custom output file", () => {
+    //
   });
 });
