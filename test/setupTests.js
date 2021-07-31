@@ -6,6 +6,9 @@
  */
 const { createHash } = require("crypto");
 const { readFile } = require("fs/promises");
+const { validate } = require("jsonschema");
+const schemaSpec =
+  require("@gitlab-org/security-report-schemas").DependencyScanningReportSchema;
 const path = require("path");
 const thisModule = require("../package.json");
 
@@ -26,4 +29,18 @@ global.sha256sum = async function sha256sum(filepath) {
   const data = await readFile(filepath);
   hash.update(data);
   return hash.digest("hex");
+};
+
+global.validateReport = function validateReport(reportObj) {
+  const result = validate(reportObj, schemaSpec);
+  const isValid = result.errors.length === 0;
+  if (!isValid) {
+    console.error(result.errors.join("; "));
+  }
+  return isValid;
+};
+
+global.validateReportFile = async function validateReportFile(filepath) {
+  const reportJSON = await readFile(filepath);
+  return global.validateReport(reportJSON);
 };

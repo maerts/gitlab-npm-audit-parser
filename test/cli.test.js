@@ -15,14 +15,14 @@ describe("gitlab-npm-audit-parser", () => {
       await unlink(defaultOutputFilename);
     });
 
-    it("generates correct gitlab parsable schema from piped input", async () => {
+    it("generates expected gitlab report file from piped input", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v1_report.json");
       const validGLFormatV1File = path.resolve(
         __dirname,
         "snapshot",
         "GL-report.1.json"
       );
       const validGLFormatV1Hash = await global.sha256sum(validGLFormatV1File);
-      const reportJSONfile = path.resolve(__dirname, "v1_report.json");
       const outputFile = defaultOutputFilename;
       await expect(
         subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`)
@@ -30,6 +30,13 @@ describe("gitlab-npm-audit-parser", () => {
       await expect(global.sha256sum(outputFile)).resolves.toEqual(
         validGLFormatV1Hash
       );
+    });
+
+    it("generates valid & parsable gitlab schema report", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v1_report.json");
+      const outputFile = defaultOutputFilename;
+      await subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`);
+      await expect(global.validateReportFile(outputFile)).resolves.toBeTruthy();
     });
 
     // it("handles 0 vulnerabilities found", async () => {});
@@ -41,7 +48,7 @@ describe("gitlab-npm-audit-parser", () => {
       await unlink(defaultOutputFilename);
     });
 
-    it("generates correct gitlab parsable schema from piped input", async () => {
+    it("generates expected gitlab report file from piped input", async () => {
       const reportJSONfile = path.resolve(__dirname, "v2_report.json");
       const validGLFormatV2File = path.resolve(
         __dirname,
@@ -56,6 +63,13 @@ describe("gitlab-npm-audit-parser", () => {
       await expect(global.sha256sum(outputFile)).resolves.toEqual(
         validGLFormatV2Hash
       );
+    });
+
+    it("generates valid & parsable gitlab schema report", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v2_report.json");
+      const outputFile = defaultOutputFilename;
+      await subprocessExec(`cat ${reportJSONfile} | ${parserCLI}`);
+      await expect(global.validateReportFile(outputFile)).resolves.toBeTruthy();
     });
 
     describe("run-script-use", () => {
@@ -106,6 +120,9 @@ describe("gitlab-npm-audit-parser", () => {
         await expect(global.sha256sum(outputFile)).resolves.toEqual(
           validGLFormatV2Hash
         );
+        await expect(
+          global.validateReportFile(outputFile)
+        ).resolves.toBeTruthy();
       });
     });
   });
