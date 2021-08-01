@@ -1,11 +1,10 @@
 {
-  "version": "14.0.1",
-  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.1/dist/dependency-scanning-report-format.json",
+  "version": "14.0.3",
+  "schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v14.0.3/dist/dependency-scanning-report-format.json",
   "vulnerabilities": [
     {
-      "id": "NPM Audit: axios cve_id: 1594",
-      "cve": "NPM Audit: axios cve_id: 1594",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1594::axios",
+      "cve": "npm::advisory:1594::axios",
       "category": "dependency_scanning",
       "name": "axios",
       "message": "Server-Side Request Forgery",
@@ -29,11 +28,10 @@
         {
           "type": "cve",
           "name": "Server-Side Request Forgery",
-          "value": 1594,
+          "value": "1594",
           "url": "https://npmjs.com/advisories/1594"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1594"
@@ -41,9 +39,8 @@
       ]
     },
     {
-      "id": "NPM Audit: braces cve_id: 786",
-      "cve": "NPM Audit: braces cve_id: 786",
-      "tool": "npm_audit",
+      "id": "npm::advisory:786::braces",
+      "cve": "npm::advisory:786::braces",
       "category": "dependency_scanning",
       "name": "braces",
       "message": "Regular Expression Denial of Service",
@@ -67,7 +64,7 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 786,
+          "value": "786",
           "url": "https://npmjs.com/advisories/786"
         }
       ],
@@ -79,14 +76,13 @@
       ]
     },
     {
-      "id": "NPM Audit: elliptic cve_id: 1648",
-      "cve": "NPM Audit: elliptic cve_id: 1648",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1648::elliptic",
+      "cve": "npm::advisory:1648::elliptic",
       "category": "dependency_scanning",
       "name": "elliptic",
       "message": "Use of a Broken or Risky Cryptographic Algorithm",
       "description": "Use of a Broken or Risky Cryptographic Algorithm",
-      "severity": "Moderate",
+      "severity": "Medium",
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
@@ -105,11 +101,10 @@
         {
           "type": "cve",
           "name": "Use of a Broken or Risky Cryptographic Algorithm",
-          "value": 1648,
+          "value": "1648",
           "url": "https://npmjs.com/advisories/1648"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1648"
@@ -117,9 +112,8 @@
       ]
     },
     {
-      "id": "NPM Audit: gsap cve_id: 1608",
-      "cve": "NPM Audit: gsap cve_id: 1608",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1608::gsap",
+      "cve": "npm::advisory:1608::gsap",
       "category": "dependency_scanning",
       "name": "gsap",
       "message": "Prototype Pollution",
@@ -143,11 +137,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1608,
+          "value": "1608",
           "url": "https://npmjs.com/advisories/1608"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1608"
@@ -155,9 +148,8 @@
       ]
     },
     {
-      "id": "NPM Audit: ini cve_id: 1589",
-      "cve": "NPM Audit: ini cve_id: 1589",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1589::ini",
+      "cve": "npm::advisory:1589::ini",
       "category": "dependency_scanning",
       "name": "ini",
       "message": "Prototype Pollution",
@@ -181,11 +173,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1589,
+          "value": "1589",
           "url": "https://npmjs.com/advisories/1589"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1589"
@@ -193,9 +184,8 @@
       ]
     },
     {
-      "id": "NPM Audit: merge cve_id: 1666",
-      "cve": "NPM Audit: merge cve_id: 1666",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1666::merge",
+      "cve": "npm::advisory:1666::merge",
       "category": "dependency_scanning",
       "name": "merge",
       "message": "Prototype Pollution",
@@ -219,7 +209,7 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1666,
+          "value": "1666",
           "url": "https://npmjs.com/advisories/1666"
         }
       ],
@@ -231,9 +221,8 @@
       ]
     },
     {
-      "id": "NPM Audit: npm-user-validate cve_id: 1572",
-      "cve": "NPM Audit: npm-user-validate cve_id: 1572",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1572::npm-user-validate",
+      "cve": "npm::advisory:1572::npm-user-validate",
       "category": "dependency_scanning",
       "name": "npm-user-validate",
       "message": "Regular Expression Denial of Service",
@@ -257,11 +246,10 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 1572,
+          "value": "1572",
           "url": "https://npmjs.com/advisories/1572"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1572"
@@ -269,14 +257,13 @@
       ]
     },
     {
-      "id": "NPM Audit: ssri cve_id: 565",
-      "cve": "NPM Audit: ssri cve_id: 565",
-      "tool": "npm_audit",
+      "id": "npm::advisory:565::ssri",
+      "cve": "npm::advisory:565::ssri",
       "category": "dependency_scanning",
       "name": "ssri",
       "message": "Regular Expression Denial of Service",
       "description": "Regular Expression Denial of Service",
-      "severity": "Moderate",
+      "severity": "Medium",
       "confidence": "High",
       "scanner": {
         "id": "npm_audit_advisories",
@@ -295,11 +282,10 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 565,
+          "value": "565",
           "url": "https://npmjs.com/advisories/565"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/565"
@@ -307,9 +293,8 @@
       ]
     },
     {
-      "id": "NPM Audit: y18n cve_id: 1654",
-      "cve": "NPM Audit: y18n cve_id: 1654",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1654::y18n",
+      "cve": "npm::advisory:1654::y18n",
       "category": "dependency_scanning",
       "name": "y18n",
       "message": "Prototype Pollution",
@@ -333,11 +318,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1654,
+          "value": "1654",
           "url": "https://npmjs.com/advisories/1654"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1654"
@@ -345,9 +329,8 @@
       ]
     },
     {
-      "id": "NPM Audit: yargs-parser cve_id: 1500",
-      "cve": "NPM Audit: yargs-parser cve_id: 1500",
-      "tool": "npm_audit",
+      "id": "npm::advisory:1500::yargs-parser",
+      "cve": "npm::advisory:1500::yargs-parser",
       "category": "dependency_scanning",
       "name": "yargs-parser",
       "message": "Prototype Pollution",
@@ -371,7 +354,7 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1500,
+          "value": "1500",
           "url": "https://npmjs.com/advisories/1500"
         }
       ],
@@ -387,26 +370,88 @@
     {
       "fixes": [
         {
-          "id": "NPM Audit: braces cve_id: 786"
-        }
-      ],
-      "summary": "Upgrade jest to version >=26.6.3"
-    },
-    {
-      "fixes": [
+          "id": "npm::advisory:786::braces",
+          "cve": "npm::advisory:786::braces"
+        },
         {
-          "id": "NPM Audit: merge cve_id: 1666"
-        }
-      ],
-      "summary": "Upgrade jest to version >=26.6.3"
-    },
-    {
-      "fixes": [
+          "id": "npm::advisory:1666::merge",
+          "cve": "npm::advisory:1666::merge"
+        },
         {
-          "id": "NPM Audit: yargs-parser cve_id: 1500"
+          "id": "npm::advisory:1500::yargs-parser",
+          "cve": "npm::advisory:1500::yargs-parser"
         }
       ],
-      "summary": "Upgrade jest to version >=26.6.3"
+      "summary": "Upgrade jest to version >=26.6.3",
+      "diff": " "
+    }
+  ],
+  "dependency_files": [
+    {
+      "path": "package-lock.json",
+      "package_manager": "npm",
+      "dependencies": [
+        {
+          "package": {
+            "name": "axios"
+          },
+          "version": "<0.21.1"
+        },
+        {
+          "package": {
+            "name": "braces"
+          },
+          "version": "<2.3.1"
+        },
+        {
+          "package": {
+            "name": "elliptic"
+          },
+          "version": "<6.5.4"
+        },
+        {
+          "package": {
+            "name": "gsap"
+          },
+          "version": "<3.6.0"
+        },
+        {
+          "package": {
+            "name": "ini"
+          },
+          "version": "<1.3.6"
+        },
+        {
+          "package": {
+            "name": "merge"
+          },
+          "version": "<2.1.1"
+        },
+        {
+          "package": {
+            "name": "npm-user-validate"
+          },
+          "version": "< 1.0.1"
+        },
+        {
+          "package": {
+            "name": "ssri"
+          },
+          "version": ">=5.2.2 <6.0.2 || >=7.0.0 <8.0.1"
+        },
+        {
+          "package": {
+            "name": "y18n"
+          },
+          "version": "<3.2.2||=4.0.0||>=5.0.0 <5.0.5"
+        },
+        {
+          "package": {
+            "name": "yargs-parser"
+          },
+          "version": "<13.1.2 || >=14.0.0 <15.0.1 || >=16.0.0 <18.1.2"
+        }
+      ]
     }
   ]
 }
