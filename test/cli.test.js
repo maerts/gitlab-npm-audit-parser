@@ -128,6 +128,50 @@ describe("gitlab-npm-audit-parser", () => {
   });
 
   describe("custom output file", () => {
-    //
+    let customOutputFilename;
+    beforeEach(() => {
+      customOutputFilename = ".outputfile.json";
+    });
+    afterEach(async () => {
+      await unlink(customOutputFilename);
+    });
+
+    it("generates report with user-defined filename with -o", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v2_report.json");
+      const validGLFormatV2File = path.resolve(
+        __dirname,
+        "snapshot",
+        "GL-report.2.json"
+      );
+      const validGLFormatV2Hash = await global.sha256sum(validGLFormatV2File);
+      await expect(
+        subprocessExec(
+          `cat ${reportJSONfile} | ${parserCLI} -o ${customOutputFilename}`
+        )
+      ).resolves.toBeTruthy();
+      await expect(global.sha256sum(customOutputFilename)).resolves.toEqual(
+        validGLFormatV2Hash
+      );
+    });
+
+    it("generates report at user-defined filepath with --out", async () => {
+      const reportJSONfile = path.resolve(__dirname, "v2_report.json");
+      const validGLFormatV2File = path.resolve(
+        __dirname,
+        "snapshot",
+        "GL-report.2.json"
+      );
+      const validGLFormatV2Hash = await global.sha256sum(validGLFormatV2File);
+      customOutputFilename = path.resolve(__dirname, customOutputFilename);
+      await expect(
+        subprocessExec(
+          `cat ${reportJSONfile} | ${parserCLI} --out ${customOutputFilename}`
+        )
+      ).resolves.toBeTruthy();
+      await expect(global.sha256sum(customOutputFilename)).resolves.toEqual(
+        validGLFormatV2Hash
+      );
+    });
+  });
   });
 });
