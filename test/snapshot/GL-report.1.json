@@ -429,7 +429,76 @@
       ]
     }
   ],
-  "remediations": [],
+  "remediations": [
+    {
+      "fixes": [
+        {
+          "id": "npm::advisory:17::jsonwebtoken",
+          "cve": "npm::advisory:17::jsonwebtoken"
+        },
+        {
+          "id": "npm::advisory:88::jws",
+          "cve": "npm::advisory:88::jws"
+        },
+        {
+          "id": "npm::advisory:658::base64url",
+          "cve": "npm::advisory:658::base64url"
+        },
+        {
+          "id": "npm::advisory:658::base64url",
+          "cve": "npm::advisory:658::base64url"
+        },
+        {
+          "id": "npm::advisory:532::moment",
+          "cve": "npm::advisory:532::moment"
+        },
+        {
+          "id": "npm::advisory:55::moment",
+          "cve": "npm::advisory:55::moment"
+        }
+      ],
+      "summary": "Upgrade express-jwt to v5.3.1.",
+      "diff": " "
+    },
+    {
+      "fixes": [
+        {
+          "id": "npm::advisory:577::lodash",
+          "cve": "npm::advisory:577::lodash"
+        },
+        {
+          "id": "npm::advisory:135::sanitize-html",
+          "cve": "npm::advisory:135::sanitize-html"
+        },
+        {
+          "id": "npm::advisory:154::sanitize-html",
+          "cve": "npm::advisory:154::sanitize-html"
+        }
+      ],
+      "summary": "Upgrade sanitize-html to v1.19.1.",
+      "diff": " "
+    },
+    {
+      "fixes": [
+        {
+          "id": "npm::advisory:566::hoek",
+          "cve": "npm::advisory:566::hoek"
+        }
+      ],
+      "summary": "Upgrade hoek to version 4.2.1, 5.0.3 or later.",
+      "diff": " "
+    },
+    {
+      "fixes": [
+        {
+          "id": "npm::advisory:598::tunnel-agent",
+          "cve": "npm::advisory:598::tunnel-agent"
+        }
+      ],
+      "summary": "Upgrade tunnel-agent to version 0.6.0 or later.",
+      "diff": " "
+    }
+  ],
   "dependency_files": [
     {
       "path": "package.json",
