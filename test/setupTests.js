@@ -23,6 +23,9 @@ global.sha256sum = async function sha256sum(filepath) {
 };
 
 global.validateReport = function validateReport(reportObj) {
+  if (typeof reportObj !== "object" || Array.isArray(reportObj)) {
+    throw new Error("Invalid reportObj provided.");
+  }
   const result = validate(reportObj, schemaSpec);
   const isValid = result.errors.length === 0;
   if (!isValid) {
@@ -33,6 +36,16 @@ global.validateReport = function validateReport(reportObj) {
 };
 
 global.validateReportFile = async function validateReportFile(filepath) {
-  const reportJSON = await readFile(filepath, "utf-8");
-  return global.validateReport(reportJSON);
+  const strReport = await readFile(filepath, "utf-8");
+  try {
+    const reportJSON = JSON.parse(strReport);
+    return global.validateReport(reportJSON);
+  } catch (error) {
+    if (Object.getPrototypeOf(error) === SyntaxError.prototype) {
+      throw new Error(
+        "Data provided is not JSON parsable. Check input format."
+      );
+    }
+    throw error;
+  }
 };
