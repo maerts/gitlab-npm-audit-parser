@@ -370,26 +370,20 @@
     {
       "fixes": [
         {
-          "id": "npm::advisory:786::braces"
-        }
-      ],
-      "summary": "Upgrade jest to version >=26.6.3"
-    },
-    {
-      "fixes": [
+          "id": "npm::advisory:786::braces",
+          "cve": "npm::advisory:786::braces"
+        },
         {
-          "id": "npm::advisory:1666::merge"
-        }
-      ],
-      "summary": "Upgrade jest to version >=26.6.3"
-    },
-    {
-      "fixes": [
+          "id": "npm::advisory:1666::merge",
+          "cve": "npm::advisory:1666::merge"
+        },
         {
-          "id": "npm::advisory:1500::yargs-parser"
+          "id": "npm::advisory:1500::yargs-parser",
+          "cve": "npm::advisory:1500::yargs-parser"
         }
       ],
-      "summary": "Upgrade jest to version >=26.6.3"
+      "summary": "Upgrade jest to version >=26.6.3",
+      "diff": " "
     }
   ],
   "dependency_files": [
