@@ -28,11 +28,10 @@
         {
           "type": "cve",
           "name": "Server-Side Request Forgery",
-          "value": 1594,
+          "value": "1594",
           "url": "https://npmjs.com/advisories/1594"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1594"
@@ -65,7 +64,7 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 786,
+          "value": "786",
           "url": "https://npmjs.com/advisories/786"
         }
       ],
@@ -102,11 +101,10 @@
         {
           "type": "cve",
           "name": "Use of a Broken or Risky Cryptographic Algorithm",
-          "value": 1648,
+          "value": "1648",
           "url": "https://npmjs.com/advisories/1648"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1648"
@@ -139,11 +137,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1608,
+          "value": "1608",
           "url": "https://npmjs.com/advisories/1608"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1608"
@@ -176,11 +173,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1589,
+          "value": "1589",
           "url": "https://npmjs.com/advisories/1589"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1589"
@@ -213,7 +209,7 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1666,
+          "value": "1666",
           "url": "https://npmjs.com/advisories/1666"
         }
       ],
@@ -250,11 +246,10 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 1572,
+          "value": "1572",
           "url": "https://npmjs.com/advisories/1572"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1572"
@@ -287,11 +282,10 @@
         {
           "type": "cve",
           "name": "Regular Expression Denial of Service",
-          "value": 565,
+          "value": "565",
           "url": "https://npmjs.com/advisories/565"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/565"
@@ -324,11 +318,10 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1654,
+          "value": "1654",
           "url": "https://npmjs.com/advisories/1654"
         }
       ],
-      "solution": null,
       "links": [
         {
           "url": "https://npmjs.com/advisories/1654"
@@ -361,7 +354,7 @@
         {
           "type": "cve",
           "name": "Prototype Pollution",
-          "value": 1500,
+          "value": "1500",
           "url": "https://npmjs.com/advisories/1500"
         }
       ],
