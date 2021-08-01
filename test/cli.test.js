@@ -173,5 +173,44 @@ describe("gitlab-npm-audit-parser", () => {
       );
     });
   });
+
+  describe("cli options", () => {
+    const helptext = [
+      "Usage: parse [options]",
+      "",
+      "Options:",
+      "  -V, --version     output the version number",
+      "  -o, --out <path>  output filename, defaults to gl-dependency-scanning-report.json",
+      "  -h, --help        output usage information\n"
+    ].join("\n");
+
+    it("prints version when given `--version`", async () => {
+      // eslint-disable-next-line global-require
+      const pkgVersion = require("../package.json").version;
+      await expect(subprocessExec(`${parserCLI} --version`)).resolves.toEqual({
+        stdout: `${pkgVersion}\n`,
+        stderr: ""
+      });
+    });
+    it("prints help info when given `-h`", async () => {
+      await expect(subprocessExec(`${parserCLI} -h`)).resolves.toEqual({
+        stderr: "",
+        stdout: helptext
+      });
+    });
+    it("prints help info when given `--help`", async () => {
+      await expect(subprocessExec(`${parserCLI} --help`)).resolves.toEqual({
+        stderr: "",
+        stdout: helptext
+      });
+    });
+    it("fails on invalid option `-x`", async () => {
+      const command = `${parserCLI} -x`;
+      const errMsg = [
+        `Command failed: ${command}`,
+        "error: unknown option `-x'\n"
+      ].join("\n");
+      await expect(subprocessExec(command)).rejects.toThrowError(errMsg);
+    });
   });
 });
