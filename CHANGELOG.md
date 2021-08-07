@@ -77,8 +77,6 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)._
 - Changed `remark-lint-are-links-valid` devdependency to
   `remark-lint-no-dead-urls` in favor of an active repo that resolves its
   vulnerabilities
-- Force resolved `trim@<=0.0.3`'s regex Denial of Service vulnerability of
-  remark devdependency
 
 ---
 

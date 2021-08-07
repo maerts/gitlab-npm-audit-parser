@@ -110,6 +110,12 @@ parameters, this library will ignore any prefixed stdout data prior to the first
 open bracket for the JSON output. This way `npm run --silent` is no longer
 required.
 
+## Vulnerability Report
+
+| Vulnerability |     PKG      | Category |     In Production Pkg?      | Notes                                                                 |
+| ------------- | :----------: | :------: | :-------------------------: | --------------------------------------------------------------------- |
+| RegExp DoS    | trim\@<0.0.3 |   High   | No _(DevDependency/Linter)_ | waiting for remark-parse\@^9.x.x release, owner will not patch v8.0.3 |
+
 ## Test
 
 ```sh
