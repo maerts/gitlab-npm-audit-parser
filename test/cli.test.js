@@ -1,4 +1,4 @@
-const { unlink, copyFile } = require("fs/promises");
+const { unlink, copyFile } = require("fs").promises;
 const { promisify } = require("util");
 const path = require("path");
 const subprocess = require("child_process");
@@ -91,7 +91,6 @@ describe("gitlab-npm-audit-parser", () => {
     describe("run-script-use", () => {
       const originalReportJSONfile = path.resolve(__dirname, "v2_report.json");
       const reportJSONfile = `${originalReportJSONfile}.tmp`;
-      let pretestSetup = false;
 
       beforeAll(async () => {
         await copyFile(originalReportJSONfile, reportJSONfile);
@@ -108,7 +107,6 @@ describe("gitlab-npm-audit-parser", () => {
             return `\n${lines.join("\n")}`;
           }
         });
-        pretestSetup = true;
       });
 
       afterAll(async () => {
@@ -116,11 +114,6 @@ describe("gitlab-npm-audit-parser", () => {
       });
 
       it("generates correct gitlab parsable schema from piped input w/ run-script prefix", async () => {
-        if (!pretestSetup) {
-          // Jest 27 (uses jest-circus), should deem this check irrelevant.
-          // BeforeAll/BeforeEach hook failures will terminate all consecutive tests
-          throw new Error("BeforeAll failed prior to test.");
-        }
         const validGLFormatV2File = path.resolve(
           __dirname,
           "snapshot",
@@ -149,9 +142,19 @@ describe("gitlab-npm-audit-parser", () => {
       "",
       "Options:",
       "  -V, --version     output the version number",
-      "  -o, --out <path>  output filename, defaults to gl-dependency-scanning-report.json",
-      "  -h, --help        output usage information\n"
+      "  -o, --out <path>  output filename, defaults to",
+      "                    gl-dependency-scanning-report.json",
+      "  -h, --help        display help for command\n"
     ].join("\n");
+
+    it("prints version when given `-V`", async () => {
+      // eslint-disable-next-line global-require
+      const pkgVersion = require("../package.json").version;
+      await expect(subprocessExec(`${parserCLI} -V`)).resolves.toEqual({
+        stdout: `${pkgVersion}\n`,
+        stderr: ""
+      });
+    });
 
     it("prints version when given `--version`", async () => {
       // eslint-disable-next-line global-require
@@ -180,7 +183,7 @@ describe("gitlab-npm-audit-parser", () => {
       const command = `${parserCLI} -x`;
       const errMsg = [
         `Command failed: ${command}`,
-        "error: unknown option `-x'\n"
+        "error: unknown option '-x'\n"
       ].join("\n");
       await expect(subprocessExec(command)).rejects.toThrowError(errMsg);
     });

@@ -5,7 +5,7 @@
  * Configures jest test environment for all tests
  */
 const { createHash } = require("crypto");
-const { readFile } = require("fs/promises");
+const { readFile } = require("fs").promises;
 const { validate } = require("jsonschema");
 const schemaSpec =
   require("@gitlab-org/security-report-schemas").DependencyScanningReportSchema;
