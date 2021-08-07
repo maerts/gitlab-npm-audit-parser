@@ -149,7 +149,8 @@ describe("gitlab-npm-audit-parser", () => {
       "",
       "Options:",
       "  -V, --version     output the version number",
-      "  -o, --out <path>  output filename, defaults to gl-dependency-scanning-report.json",
+      "  -o, --out <path>  output filename, defaults to",
+      "                    gl-dependency-scanning-report.json",
       "  -h, --help        output usage information\n"
     ].join("\n");
 
@@ -180,7 +181,7 @@ describe("gitlab-npm-audit-parser", () => {
       const command = `${parserCLI} -x`;
       const errMsg = [
         `Command failed: ${command}`,
-        "error: unknown option `-x'\n"
+        "error: unknown option '-x'\n"
       ].join("\n");
       await expect(subprocessExec(command)).rejects.toThrowError(errMsg);
     });
