@@ -91,7 +91,6 @@ describe("gitlab-npm-audit-parser", () => {
     describe("run-script-use", () => {
       const originalReportJSONfile = path.resolve(__dirname, "v2_report.json");
       const reportJSONfile = `${originalReportJSONfile}.tmp`;
-      let pretestSetup = false;
 
       beforeAll(async () => {
         await copyFile(originalReportJSONfile, reportJSONfile);
@@ -108,7 +107,6 @@ describe("gitlab-npm-audit-parser", () => {
             return `\n${lines.join("\n")}`;
           }
         });
-        pretestSetup = true;
       });
 
       afterAll(async () => {
@@ -116,11 +114,6 @@ describe("gitlab-npm-audit-parser", () => {
       });
 
       it("generates correct gitlab parsable schema from piped input w/ run-script prefix", async () => {
-        if (!pretestSetup) {
-          // Jest 27 (uses jest-circus), should deem this check irrelevant.
-          // BeforeAll/BeforeEach hook failures will terminate all consecutive tests
-          throw new Error("BeforeAll failed prior to test.");
-        }
         const validGLFormatV2File = path.resolve(
           __dirname,
           "snapshot",
