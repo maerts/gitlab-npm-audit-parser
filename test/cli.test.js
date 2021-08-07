@@ -151,8 +151,17 @@ describe("gitlab-npm-audit-parser", () => {
       "  -V, --version     output the version number",
       "  -o, --out <path>  output filename, defaults to",
       "                    gl-dependency-scanning-report.json",
-      "  -h, --help        output usage information\n"
+      "  -h, --help        display help for command\n"
     ].join("\n");
+
+    it("prints version when given `-V`", async () => {
+      // eslint-disable-next-line global-require
+      const pkgVersion = require("../package.json").version;
+      await expect(subprocessExec(`${parserCLI} -V`)).resolves.toEqual({
+        stdout: `${pkgVersion}\n`,
+        stderr: ""
+      });
+    });
 
     it("prints version when given `--version`", async () => {
       // eslint-disable-next-line global-require
