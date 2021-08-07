@@ -14,7 +14,7 @@
     "build": "npm run --silent build:prod --",
     "build-watch": "webpack --mode=production --watch",
     "build:prod": "webpack --mode=production --node-env=production",
-    "prepublishOnly": "npm run test:prod && eslint . --ext md,mdx",
+    "prepublishOnly": "npm test && eslint . --ext md,mdx",
     "lint": "eslint . --ext js,md,mdx",
     "format": "npm run --silent lint -- --fix",
     "pretest": "npm run --silent build",
