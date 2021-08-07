@@ -16,7 +16,7 @@ program
   )
   .parse(process.argv);
 
-const filename = program.out || "gl-dependency-scanning-report.json";
+const filename = program.opts().out || "gl-dependency-scanning-report.json";
 
 stdin.setEncoding("utf8");
 
