@@ -116,7 +116,23 @@ required.
 | ------------- | :----------: | :------: | :-------------------------: | --------------------------------------------------------------------- |
 | RegExp DoS    | trim\@<0.0.3 |   High   | No _(DevDependency/Linter)_ | waiting for remark-parse\@^9.x.x release, owner will not patch v8.0.3 |
 
-## Test
+## Contributors
+
+### Development Environment
+
+- Use `nvm` for node version management (see `.nvmrc` for version requirement)
+- Use latest npm version via `nvm install-latest-npm`
+
+### Guidelines
+
+- Code (including Markdown) must pass a linting checks
+- Developmental repository must be compatible with NodeJS v12 LTS & `npm@^7.0.0`
+- Distribution build must be compatible with v10
+- Must have successful build & pass all test cases in both Node.js v10 LTS, v12
+  LTS, & v14 LTS
+- Releases will have all non-breaking changes in dependencies up-to-date
+
+### Test
 
 ```sh
 # Production build (CLI bundle) & Executes all test cases
@@ -130,7 +146,7 @@ npm run test:dev   # enable test watch mode
 npm run build-watch
 ```
 
-### Examples
+## Examples
 
 | #   | INGEST FILE             |     | OUTPUT FILE                         |
 | --- | ----------------------- | --- | ----------------------------------- |

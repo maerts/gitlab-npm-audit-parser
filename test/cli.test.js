@@ -1,4 +1,4 @@
-const { unlink, copyFile } = require("fs/promises");
+const { unlink, copyFile } = require("fs").promises;
 const { promisify } = require("util");
 const path = require("path");
 const subprocess = require("child_process");
