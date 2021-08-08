@@ -12,6 +12,7 @@ const schemaSpec =
 const path = require("path");
 const thisModule = require("../package.json");
 
+global.isWindows = process.platform === "win32";
 global.PROJECT_ROOT = path.dirname(__dirname);
 global.PARSER_CLI = path.resolve(global.PROJECT_ROOT, thisModule.main);
 
