@@ -28,7 +28,7 @@ jobs:
         run: npm run lint
 
   build:
-    name: NodeJS with Webpack
+    name: Build on Node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -55,7 +55,7 @@ jobs:
           retention-days: 1
 
   test:
-    name: Test on ${{ matrix.os }} NodeJs@v${{ matrix.node_version }}
+    name: Test on ${{ matrix.os }} Node ${{ matrix.node_version }}
     runs-on: ${{ matrix.os }}
     needs: build
     strategy:
@@ -90,4 +90,4 @@ jobs:
       - name: execute tests
         env: 
           NODE_ENV: production
-        run: npm exec jest
+        run: npm test
