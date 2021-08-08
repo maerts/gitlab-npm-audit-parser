@@ -88,4 +88,6 @@ jobs:
             fs.chmodSync(m.bin,0o555);"
 
       - name: execute tests
-        run: npm run test:prod
+        env: 
+          NODE_ENV: production
+        run: npm exec jest

@@ -19,7 +19,8 @@
     "format": "npm run --silent lint -- --fix",
     "pretest": "npm run --silent build",
     "test": "npm run --silent test:prod --",
-    "test:prod": "export NODE_ENV=production; jest --runInBand"
+    "test-debug": "jest --runInBand",
+    "test:prod": "jest"
   },
   "repository": {
     "type": "git",
