@@ -4,8 +4,13 @@
   <a href="https://www.npmjs.com/package/@codejedi365/gitlab-npm-audit-parser">
     <img src="https://img.shields.io/npm/v/@codejedi365/gitlab-npm-audit-parser" />
   </a>
-  <img src="https://img.shields.io/bundlephobia/min/@codejedi365/gitlab-npm-audit-parser" />
-  <img src="https://img.shields.io/npm/l/@codejedi365/gitlab-npm-audit-parser">
+  <img src="https://img.shields.io/npm/l/@codejedi365/gitlab-npm-audit-parser?color=yellow">
+  <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/blob/main/CHANGELOG.md">
+    <img src="https://img.shields.io/badge/&#9741-changelog-yellow">
+  </a>
+  <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/actions/workflows/ci.yml">
+    <img src="https://github.com/codejedi365/gitlab-npm-audit-parser/workflows/ci.yml/badge.svg" />
+  </a>
   <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/issues">
     <img src="https://img.shields.io/github/issues/codejedi365/gitlab-npm-audit-parser">
   </a>
@@ -14,10 +19,8 @@
 </p>
 <p align="center">
   <img src="https://img.shields.io/npm/dependency-version/@codejedi365/gitlab-npm-audit-parser/dev/webpack">
-  <img src="https://img.shields.io/node/v-lts/@codejedi365/gitlab-npm-audit-parser">
-  <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/blob/main/CHANGELOG.md">
-    <img src="https://img.shields.io/badge/&#9741-changelog-green">
-  </a>
+  <img src="https://img.shields.io/node/v-lts/@codejedi365/gitlab-npm-audit-parser?color=blue">
+  <img src="https://img.shields.io/bundlephobia/min/@codejedi365/gitlab-npm-audit-parser" />
   <img src="https://img.shields.io/github/last-commit/codejedi365/gitlab-npm-audit-parser">
 </p>
 

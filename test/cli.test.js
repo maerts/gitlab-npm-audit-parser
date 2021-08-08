@@ -4,7 +4,22 @@ const path = require("path");
 const subprocess = require("child_process");
 const { replaceInFile } = require("replace-in-file");
 
-const subprocessExec = promisify(subprocess.exec);
+const defaultWindowsSettings = { windowsHide: true, shell: "powershell.exe" };
+const combineObjs = (...args) => {
+  return Object.fromEntries(
+    args
+      .map((obj) => Object.entries(obj))
+      .reduce((prev, curr) => {
+        return prev.concat(curr);
+      })
+  );
+};
+const subprocessExec = (cmd, opts = {}) => {
+  const options = global.isWindows
+    ? combineObjs(defaultWindowsSettings, opts)
+    : opts;
+  return promisify(subprocess.exec)(cmd, options);
+};
 const parserCLI = global.PARSER_CLI;
 const defaultOutputFilename = "gl-dependency-scanning-report.json";
 

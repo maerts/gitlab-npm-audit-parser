@@ -12,8 +12,13 @@ const schemaSpec =
 const path = require("path");
 const thisModule = require("../package.json");
 
+global.isWindows = process.platform === "win32";
 global.PROJECT_ROOT = path.dirname(__dirname);
 global.PARSER_CLI = path.resolve(global.PROJECT_ROOT, thisModule.main);
+if (global.isWindows) {
+  // Prepend node call so that Windows will not freak out at a file call
+  global.PARSER_CLI = `node ${global.PARSER_CLI}`;
+}
 
 global.sha256sum = async function sha256sum(filepath) {
   const hash = createHash("sha256");

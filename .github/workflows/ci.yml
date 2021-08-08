@@ -1,0 +1,93 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: 
+      - main
+      - pre-release
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    name: Lint via NodeJs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js v12
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+  build:
+    name: Build on Node ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          npm install
+          npm run build:prod
+      
+      - name: Upload bundled parser
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: dist-bundle
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 1
+
+  test:
+    name: Test on ${{ matrix.os }} Node ${{ matrix.node_version }}
+    runs-on: ${{ matrix.os }}
+    needs: build
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download bundle
+        uses: actions/download-artifact@v2
+        with:
+          name: dist-bundle
+          path: dist/
+
+      - name: Set bundle as executable
+        run: >
+          node -e "
+            const m=require('./package.json');
+            const fs=require('fs');
+            fs.chmodSync(m.bin,0o555);"
+
+      - name: execute tests
+        env: 
+          NODE_ENV: production
+        run: npm run test:prod
