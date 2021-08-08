@@ -49,9 +49,9 @@ jobs:
       - name: Upload bundled parser
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: parser.min.js
+          name: dist-bundle
           path: dist/*
-          warn: Build artifact not found, likely due to build error
+          if-no-files-found: error
           retention-days: 1
 
   test:
@@ -77,7 +77,7 @@ jobs:
       - name: Download bundle
         uses: actions/download-artifact@v2
         with:
-          name: parser.min.js
+          name: dist-bundle
           path: dist/
 
       - name: Set bundle as executable
