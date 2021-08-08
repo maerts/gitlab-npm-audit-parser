@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/&#9741-changelog-yellow">
   </a>
   <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/actions/workflows/ci.yml">
-    <img src="https://github.com/codejedi365/gitlab-npm-audit-parser/workflows/ci.yml/badge.svg" />
+    <img src="https://github.com/codejedi365/gitlab-npm-audit-parser/actions/workflows/ci.yml/badge.svg" >
   </a>
   <a href="https://github.com/codejedi365/gitlab-npm-audit-parser/issues">
     <img src="https://img.shields.io/github/issues/codejedi365/gitlab-npm-audit-parser">
