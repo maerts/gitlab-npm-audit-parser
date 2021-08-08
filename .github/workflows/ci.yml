@@ -80,5 +80,12 @@ jobs:
           name: parser.min.js
           path: dist/
 
+      - name: Set bundle as executable
+        run: >
+          node -e "\
+            const m=require('./package.json');\
+            const fs=require('fs');\
+            fs.chmodSync(m.bin,0o555);"
+
       - name: execute tests
         run: npm run test:prod
