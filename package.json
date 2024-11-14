@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:codejedi365/gitlab-npm-audit-parser.git"
+    "url": "git@github.com:maerts/gitlab-npm-audit-parser.git"
   },
   "keywords": [
     "gitlab",
@@ -49,6 +49,11 @@
       "name": "codejedi365",
       "email": "codejedi365@gmail.com",
       "url": "https://github.com/codejedi365"
+    },
+    {
+      "name": "maerts",
+      "email": "maarten.aerts@gmail.com",
+      "url": "https://github.com/maerts"
     }
   ],
   "engines": {
