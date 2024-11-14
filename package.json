@@ -3,7 +3,7 @@
   "version": "2.0.1",
   "description": "NPM Audit parser for GitLab dependency scanning",
   "bin": {
-    "gitlab-npm-audit-parser": "dist/parse.js",
+    "gitlab-npm-audit-parser": "dist/parse.js"
   },
   "main": "dist/parse.js",
   "files": [
